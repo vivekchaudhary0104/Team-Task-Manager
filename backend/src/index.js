@@ -4,7 +4,10 @@ require('dotenv').config();
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: 'https://zucchini-embrace-production-1ba1.up.railway.app',
+  credentials: true
+}))
 app.use(express.json());
 
 app.use('/api/auth',     require('./routes/auth'));
